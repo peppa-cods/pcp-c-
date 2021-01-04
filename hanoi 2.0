@@ -1,0 +1,28 @@
+#include <iostream> 
+#include <cmath>
+using namespace std; 
+ 
+ 
+int hanoi(int n ,int a,int b,int c) {
+	int total = 0;
+	if(n == 1){
+		cout << a << "->" << c << endl;
+		return 1;
+	}
+total += hanoi(n-1,a,c,b);
+total++; 
+cout << a << "->" << c << endl;
+total += hanoi(n-1,b,a,c);
+return total;
+} 
+
+
+int main() { 
+	int n; 
+	cin >> n;
+	int total = hanoi(n,1,2,3);
+	cout << "tot=" << total << endl;
+	
+
+} 
+ 

@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+unsigned long pieces(int cuts){
+	if (cuts == 1){
+		return 2;
+	}
+	if (cuts == 2){
+		return 4;
+	} 
+	if (cuts == 0){
+		return 1;
+	}
+	return cuts+pieces(cuts-1);
+} 
+int main() 
+{ 
+	int n;
+	cin >> n;
+	n = n+1;
+	if (1 >= n){
+		cout <<  0;
+	} else{
+			for (int i=1; i<=n; i++){
+		if (pieces(i) >= n){
+			cout << i;
+			break;
+	}
+	}
+	}
+    return 0; 
+} 

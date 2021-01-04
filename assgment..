@@ -1,0 +1,55 @@
+#include <iostream>
+#include <cstdio>
+#include <string>
+#include <map>
+#include <algorithm>
+#include <vector>
+#include <queue>
+#include <bits/stdc++.h>
+ 
+using namespace std;
+ 
+int t[21];
+bool used[21];
+
+long long mincost = INT_MAX;
+void permutation(int n, int pos,int **arr) {
+	long long total = 0;
+    if (pos == n){
+        for (int i=0; i<n; i++){
+            // cout << t[i] << " ";
+						total += arr[t[i]][i];
+        }
+				if (total < mincost){
+					mincost = total;
+						}
+        return;
+    }
+
+    for (int i=0; i<n; i++){
+        if (!used[i]){
+            t[pos] = i;
+              used[i] = true;
+              permutation(n,pos+1,arr);
+              used[i] = false;
+        }
+    }
+}
+   
+ 
+int main() {
+	int n;
+  cin >> n;
+	int **array;
+	array = new int *[n];
+	for(int i = 0; i <n; i++)
+    array[i] = new int[n];
+
+	for(int i=0; i<n; i++){
+		for(int j=0; j<n; j++){
+			cin >> array[i][j];
+			}
+		}
+		permutation(n,0, array);
+		cout << mincost << endl;
+}

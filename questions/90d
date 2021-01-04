@@ -1,0 +1,28 @@
+#include <iostream>
+#include <stdlib.h>     
+using namespace std;
+int main(){
+	int n;
+	int m;
+	cin >> n >> m;
+	int a[n][m];
+	int b[m][n];
+	for(int i=0; i<n; i++){
+		for(int x=0; x<m; x++){
+			a[i][x] = 0;
+			cin >> a[i][x];		
+		}
+		
+	}
+				for(int x=0; x<m; x++){
+					for(int i=n-1; i>=0; i--){
+						b[x][n-i-1] = a[i][x] ;
+		}
+		}
+	for(int j=0; j<m; j++){
+		cout << endl;
+		for(int k=0; k<n; k++){
+			cout << b[j][k] << " ";
+		}
+	}
+}

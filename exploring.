@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std;
+
+
+int f(int n, int k){
+	if(n > k &&(n-k)%2 == 0){
+		return f((n-k)/2,k) + f((n+k)/2,k);
+	} else{
+		return 1;
+	}
+}
+
+
+int main(){
+	int n,k;
+	cin >> n >> k;
+	cout << f(n,k);
+}

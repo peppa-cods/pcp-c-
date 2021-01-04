@@ -1,0 +1,15 @@
+#include <iostream>
+
+using namespace std;
+int n = 3;
+
+int main(){
+	int result = 1;
+	for (int i = n; i>0; i--){
+	 result = result*i;
+
+
+	}
+	cout << result;
+}
+

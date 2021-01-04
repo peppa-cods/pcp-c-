@@ -1,0 +1,32 @@
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+struct NODE {
+	int a;
+	int b;
+};
+bool comparison(NODE i, NODE j){
+	if (i.a != j.a){
+		return i.a < j.a;
+
+	}
+	return i.b < j.b;
+}
+int main(){
+	int n;
+	NODE a;
+	scanf("%d", &n);
+	vector <NODE> x;
+	for (int i = 0; i < n; i++){
+		scanf("%d", &a.a);
+		scanf("%d", &a.b);
+		x.push_back(a);
+	}
+	sort(x.begin(), x.end(), comparison);
+	for (int i = 0; i < n; i++){
+		printf("%d %d\n", x[i].a, x[i].b);
+	}
+}

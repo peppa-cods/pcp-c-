@@ -1,0 +1,23 @@
+#include <iostream>
+#include <stdlib.h>     
+using namespace std;
+int main(){
+	int n;
+	int m;
+	cin >> n >> m;
+	int a[n][m];
+	for(int i=0; i<n; i++){
+		for(int x=0; x<m; x++){
+			a[i][x] = 0;
+			cin >> a[i][x];
+			a[i][x] = abs(a[i][x]);			
+		}
+		
+	}
+	for(int j=0; j<n; j++){
+		cout << endl;
+		for(int k=0; k<m; k++){
+			cout << a[j][k] << " ";
+		}
+	}
+}

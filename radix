@@ -1,0 +1,21 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void f(int i,int k){
+    int new_num = i/k;
+	if (i == 0){
+        return;
+	}
+    int value = i%k;
+    
+    f(new_num,k);
+    cout << value << endl;
+}
+int main(){
+	int n,k;
+	cin >> n >> k;
+    f(n,k);
+
+}
